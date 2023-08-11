@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+
+  db:
+    image: mysql:8.1
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: prisma
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: prisma
+      MYSQL_PASSWORD: prisma
