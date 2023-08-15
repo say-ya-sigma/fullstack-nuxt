@@ -9,6 +9,7 @@
     "prisma:init": "prisma init",
     "prisma:gen": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
+    "prisma:format": "prisma format",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
