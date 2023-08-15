@@ -24,3 +24,5 @@ logs
 
 /docker/mysql/*
 !.gitkeep
+
+.vscode
