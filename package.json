@@ -10,6 +10,8 @@
     "prisma:gen": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:format": "prisma format",
+    "eslint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
+    "eslint:fix": "eslint --fix --ext .ts,.js,.vue --ignore-path .gitignore .",
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
