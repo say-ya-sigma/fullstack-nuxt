@@ -1,8 +1,8 @@
-import { z } from "zod"
-import { publicProcedure } from "../.."
+import { z } from 'zod'
+import { publicProcedure } from '../..'
 
-export const getHey = publicProcedure.input(z.object({ text: z.string().nullish()}).nullish()).query(({ input }) => {
+export const getHey = publicProcedure.input(z.object({ text: z.string().nullish() }).nullish()).query(({ input }) => {
   return {
-    greeting: `Hey ${input?.text ?? 'World'}`,
+    greeting: `Hey ${input?.text ?? 'World'}`
   }
 })
