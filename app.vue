@@ -1,6 +1,7 @@
 <template>
   <div>
-    {{ hello.greeting }}
+    <div>{{ hello.greeting }}</div>
+    <div>{{ hey.greeting }}</div>
   </div>
 </template>
 
@@ -11,9 +12,11 @@ export default defineComponent({
   name: 'App',
   async setup() {
     const { $client } = useNuxtApp()
-    const hello = await $client.hello.query({ text: 'Hello' })
+    const hello = await $client.hello.getHello.query({ text: 'new world' })
+    const hey = await $client.hello.getHey.query({ text: 'new world' })
     return {
-      hello
+      hello,
+      hey
     }
   },
 })
