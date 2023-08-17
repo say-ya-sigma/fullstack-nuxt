@@ -14,9 +14,6 @@ dependencies:
   '@trpc/server':
     specifier: ^10.37.1
     version: 10.37.1
-  pnpm:
-    specifier: ^8.6.12
-    version: 8.6.12
   prisma:
     specifier: ^5.1.1
     version: 5.1.1
@@ -5810,12 +5807,6 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
     dev: true
-
-  /pnpm@8.6.12:
-    resolution: {integrity: sha512-Eza4C5SO/Xl5IYozupbZ5NOA5leBRPYxmXmXfe7G4/4uCkRLhks84rB33aitxNZU/uMrnDGGjwrLktoKvPjqHA==}
-    engines: {node: '>=16.14'}
-    hasBin: true
-    dev: false
 
   /postcss-calc@9.0.1(postcss@8.4.27):
     resolution: {integrity: sha512-TipgjGyzP5QzEhsOZUaIkeO5mKeMFpebWzRogWG/ysonUlnHcq5aJe0jOjpfzUU8PeSaBQnrE8ehR0QA5vs8PQ==}
