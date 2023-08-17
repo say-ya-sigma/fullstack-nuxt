@@ -15,10 +15,11 @@ model User {
   email          String          @unique
   password       String
   name           String?
-  meetingMinutes MeetingMinute[]
-  sessions       Session[]
   createdAt      DateTime        @default(now())
   updatedAt      DateTime        @updatedAt
+
+  meetingMinutes MeetingMinute[]
+  sessions       Session[]
 
   @@map("users")
 }
@@ -26,10 +27,11 @@ model User {
 model Session {
   id        Int      @id @default(autoincrement())
   userId    Int
-  user      User     @relation(fields: [userId], references: [id])
   expiredAt DateTime
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  user      User     @relation(fields: [userId], references: [id])
 
   @@map("sessions")
 }
@@ -38,14 +40,15 @@ model MeetingMinute {
   id                 Int              @id @default(autoincrement())
   title              String
   body               String
-  author             User             @relation(fields: [authorId], references: [id])
   authorId           Int
-  meetingStructure   MeetingStructure @relation(fields: [meetingStructureId], references: [id])
   meetingStructureId Int
   startAt            DateTime
   endAt              DateTime?
   createdAt          DateTime         @default(now())
   updatedAt          DateTime         @updatedAt
+
+  author             User             @relation(fields: [authorId], references: [id])
+  meetingStructure   MeetingStructure @relation(fields: [meetingStructureId], references: [id])
 
   @@map("meeting_minutes")
 }
@@ -54,9 +57,10 @@ model MeetingStructure {
   id             Int             @id @default(autoincrement())
   title          String
   path           String
-  meetingMinutes MeetingMinute[]
   createdAt      DateTime        @default(now())
   updatedAt      DateTime        @updatedAt
+
+  meetingMinutes MeetingMinute[]
 
   @@map("meeting_structures")
 }
