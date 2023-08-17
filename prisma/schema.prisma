@@ -11,14 +11,14 @@ datasource db {
 }
 
 model User {
-  id            Int             @id @default(autoincrement())
-  email         String          @unique
-  password      String
-  name          String?
-  meetingMinute MeetingMinute[]
-  sessions      Session[]
-  createdAt     DateTime        @default(now())
-  updatedAt     DateTime        @updatedAt
+  id             Int             @id @default(autoincrement())
+  email          String          @unique
+  password       String
+  name           String?
+  meetingMinutes MeetingMinute[]
+  sessions       Session[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
 
   @@map("users")
 }
@@ -35,28 +35,28 @@ model Session {
 }
 
 model MeetingMinute {
-  id              Int              @id @default(autoincrement())
-  title           String
-  body            String
-  author          User             @relation(fields: [authorId], references: [id])
-  authorId        Int
-  meetingThread   MeetingStructure @relation(fields: [meetingThreadId], references: [id])
-  meetingThreadId Int
-  startAt         DateTime
-  endAt           DateTime?
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
+  id                 Int              @id @default(autoincrement())
+  title              String
+  body               String
+  author             User             @relation(fields: [authorId], references: [id])
+  authorId           Int
+  meetingStructure   MeetingStructure @relation(fields: [meetingStructureId], references: [id])
+  meetingStructureId Int
+  startAt            DateTime
+  endAt              DateTime?
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
 
   @@map("meeting_minutes")
 }
 
 model MeetingStructure {
-  id            Int             @id @default(autoincrement())
-  title         String
-  path          String
-  meetingMinute MeetingMinute[]
-  createdAt     DateTime        @default(now())
-  updatedAt     DateTime        @updatedAt
+  id             Int             @id @default(autoincrement())
+  title          String
+  path           String
+  meetingMinutes MeetingMinute[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
 
   @@map("meeting_structures")
 }
