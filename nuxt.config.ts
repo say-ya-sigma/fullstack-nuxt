@@ -5,5 +5,8 @@ export default defineNuxtConfig({
     transpile: [
       'trpc-nuxt/client'
     ]
-  }
+  },
+  modules: [
+    '@element-plus/nuxt'
+  ]
 })
