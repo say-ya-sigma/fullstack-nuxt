@@ -15,9 +15,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.5",
     "@nuxt/devtools": "latest",
     "@types/node": "^18.17.1",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
+    "element-plus": "^2.3.9",
     "eslint": "^8.0.1",
     "eslint-config-standard-with-typescript": "^37.0.0",
     "eslint-plugin-import": "^2.25.2",
