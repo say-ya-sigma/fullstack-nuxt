@@ -2,6 +2,7 @@
   <div>
     <div>{{ hello.greeting }}</div>
     <div>{{ hey.greeting }}</div>
+    <ElButton type="primary"> el button </ElButton>
   </div>
 </template>
 
