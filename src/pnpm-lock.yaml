@@ -56,6 +56,9 @@ devDependencies:
   trpc-nuxt:
     specifier: ^0.10.6
     version: 0.10.6(@trpc/client@10.37.1)(@trpc/server@10.37.1)
+  tsx:
+    specifier: ^3.12.7
+    version: 3.12.7
   typescript:
     specifier: ^5.1.0
     version: 5.1.3
