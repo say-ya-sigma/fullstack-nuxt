@@ -1,7 +1,6 @@
 version: '3'
 
 services:
-
   db:
     image: mysql:8.1
     restart: always
@@ -14,3 +13,24 @@ services:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: prisma
       MYSQL_PASSWORD: prisma
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  testdb:
+    image: mysql:8.1
+    restart: always
+    ports:
+      - "3306:13306"
+    environment:
+      MYSQL_DATABASE: prisma
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: prisma
+      MYSQL_PASSWORD: prisma
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
