@@ -15,7 +15,7 @@ export const createUser = publicProcedure.input(CreateUser).query(async ({ input
   const result = await createUserService(input)
   if (result.error) {
     throw new TRPCError({
-      code: (result.error.code),
+      code: result.error.code,
       message: result.error.message,
     })
   }
