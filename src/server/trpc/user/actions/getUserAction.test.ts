@@ -1,5 +1,9 @@
 import { expect, test } from 'vitest'
+import { appRouter } from '../../routes';
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(1 + 2).toBe(3)
+test('getUserAciton', async () => {
+  const ctx = {}
+  const caller = appRouter.createCaller(ctx);
+  const user = await caller.user.getUser({ id: 1 });
+  expect(user.id).toBe(1);
 })
