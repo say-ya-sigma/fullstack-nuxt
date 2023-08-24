@@ -1,12 +1,12 @@
 import { Prisma, User } from "@prisma/client"
 import { ApplicationServiceError, ApplicationServiceResponse, prisma } from "../.."
-import { DeleteUser } from "../actions/deleteUserAction"
+import { GetUser } from "../actions/getUserAction"
 
-export const getUserService = async (deleteUser: DeleteUser): Promise<ApplicationServiceResponse<User>> => {
+export const getUserService = async (getUser: GetUser): Promise<ApplicationServiceResponse<User>> => {
   try {
     const user = await prisma.user.findFirstOrThrow({
       where: {
-        id: deleteUser.id
+        id: getUser.id
       }
     })
     return {
