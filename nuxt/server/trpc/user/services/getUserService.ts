@@ -1,5 +1,7 @@
 import { Prisma, User } from "@prisma/client"
-import { ApplicationServiceError, ApplicationServiceResponse, prisma } from "../.."
+import { prisma } from "../.."
+import { ApplicationServiceError } from "../../error/ApplicationServiceError"
+import { ApplicationServiceResponse } from "../../types/ApplicationService"
 import { GetUser } from "../actions/getUserAction"
 
 export const getUserService = async (getUser: GetUser): Promise<ApplicationServiceResponse<User>> => {
