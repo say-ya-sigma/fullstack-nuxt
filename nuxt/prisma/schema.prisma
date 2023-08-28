@@ -18,49 +18,5 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
-  meetingMinutes MeetingMinute[]
-  sessions       Session[]
-
   @@map("users")
-}
-
-model Session {
-  id        Int      @id @default(autoincrement())
-  userId    Int
-  expiredAt DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  user User @relation(fields: [userId], references: [id])
-
-  @@map("sessions")
-}
-
-model MeetingMinute {
-  id                 Int       @id @default(autoincrement())
-  title              String
-  body               String
-  authorId           Int
-  meetingStructureId Int
-  startAt            DateTime
-  endAt              DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-
-  author           User             @relation(fields: [authorId], references: [id])
-  meetingStructure MeetingStructure @relation(fields: [meetingStructureId], references: [id])
-
-  @@map("meeting_minutes")
-}
-
-model MeetingStructure {
-  id        Int      @id @default(autoincrement())
-  title     String
-  path      String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  meetingMinutes MeetingMinute[]
-
-  @@map("meeting_structures")
 }
