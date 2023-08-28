@@ -13,7 +13,10 @@ Nitro+h3ベースの高速なAPIサーバを内包したNuxtテンプレート
 
 ```bash
 sudo docker compose up db -d
+cp .env.example .env
 cd nuxt
 pnpm i --frozen-lockfile
+pnpm run prisma:push
+pnpm run prisma:seed
 pnpm run dev
 ```
