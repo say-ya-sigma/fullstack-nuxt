@@ -1,6 +1,19 @@
-# 用語
+# Fullstack Nuxt
 
-- meeting munite: 議事録
+Nitro+h3ベースの高速なAPIサーバを内包したNuxtテンプレート
+ 
+# Stacks
 
-- meeting thread: 会議スレッド
-  - hoge定例など特定の名称のつく一連の会議
+* Prisma
+* tRPC Nuxt
+* tRPC
+* Nuxt
+
+# Installation
+
+```bash
+sudo docker compose up db -d
+cd nuxt
+pnpm i --frozen-lockfile
+pnpm run dev
+```
